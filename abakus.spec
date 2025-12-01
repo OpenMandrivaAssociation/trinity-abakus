@@ -2,6 +2,9 @@
 # Please submit bugfixes or comments via http://www.trinitydesktop.org/
 #
 
+# Release: for packaging
+%define pkg_rel 1
+
 # TDE variables
 %define tde_epoch 2
 %if "%{?tde_version}" == ""
@@ -35,7 +38,7 @@
 Name:		trinity-%{tde_pkg}
 Epoch:		%{tde_epoch}
 Version:	0.91
-Release:	%{?tde_version}_%{?!preversion:1}%{?preversion:0_%{preversion}}%{?dist}
+Release:	%{?tde_version}_%{?!preversion:%{pkg_rel}}%{?preversion:0_%{preversion}}%{?dist}
 Summary:	Calculator for TDE
 Group:		Applications/Utilities
 URL:		http://www.trinitydesktop.org/
